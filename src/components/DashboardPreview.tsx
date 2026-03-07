@@ -77,7 +77,7 @@ export default function DashboardPreview() {
               </div>
               <div className="flex-1 mx-8">
                 <div className="rounded-md bg-navy/60 px-3 py-1 text-xs text-muted text-center font-mono">
-                  app.standcrawl.pt/{screenshots[active].path}
+                  standcrawl/{screenshots[active].path}
                 </div>
               </div>
             </div>

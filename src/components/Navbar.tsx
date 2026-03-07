@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, LogIn } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useScrollProgress } from '../hooks/useScrollProgress';
 
 const navLinks = [
@@ -62,13 +62,6 @@ export default function Navbar() {
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="https://app.standcrawl.pt/auth"
-                className="flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-muted border border-white/10 hover:border-white/20 hover:text-off-white transition-all"
-              >
-                <LogIn size={16} />
-                Entrar
-              </a>
-              <a
                 href="#contacto"
                 className="flex items-center gap-1.5 rounded-xl bg-orange px-5 py-2 text-sm font-semibold text-white shadow-glow-sm hover:scale-[1.02] hover:shadow-glow transition-all duration-200"
               >
@@ -111,13 +104,6 @@ export default function Navbar() {
                 </a>
               ))}
               <hr className="border-white/10" />
-              <a
-                href="https://app.standcrawl.pt/auth"
-                className="flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-3 text-off-white"
-              >
-                <LogIn size={18} />
-                Entrar
-              </a>
               <a
                 href="#contacto"
                 className="flex items-center justify-center gap-2 rounded-xl bg-orange px-5 py-3 font-semibold text-white shadow-glow"

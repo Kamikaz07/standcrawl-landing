@@ -134,7 +134,7 @@ export default function FeatureShowcase() {
                   </div>
                   <div className="flex-1 mx-6">
                     <div className="rounded bg-navy/60 px-2 py-0.5 text-[11px] text-muted text-center font-mono">
-                      app.standcrawl.pt/{active.id}
+                      standcrawl/{active.id}
                     </div>
                   </div>
                 </div>

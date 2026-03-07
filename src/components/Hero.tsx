@@ -124,7 +124,7 @@ export default function Hero() {
                 </div>
                 <div className="flex-1 mx-8">
                   <div className="rounded-md bg-navy/60 px-3 py-1 text-xs text-muted text-center font-mono">
-                    app.standcrawl.pt
+                    standcrawl/dashboard
                   </div>
                 </div>
               </div>
@@ -172,12 +172,22 @@ export default function Hero() {
                           <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-full bg-success" /><span className="text-[8px] text-muted">Vendas</span></div>
                         </div>
                       </div>
-                      {/* Bar chart */}
-                      <div className="flex items-end gap-1.5 h-16 mt-1">
-                        {[40, 55, 35, 65, 50, 75, 45, 80, 60, 70, 55, 85].map((h, i) => (
-                          <div key={i} className="flex-1 flex flex-col gap-0.5 items-center">
-                            <div className="w-full rounded-t bg-orange/40" style={{ height: `${h * 0.6}%` }} />
-                            <div className="w-full rounded-t bg-success/30" style={{ height: `${h * 0.4}%` }} />
+                      {/* Bar chart with month labels */}
+                      <div className="flex items-end gap-[3px] h-20 mt-1">
+                        {[
+                          { m: 'Set', stock: 62, vendas: 28 },
+                          { m: 'Out', stock: 55, vendas: 35 },
+                          { m: 'Nov', stock: 70, vendas: 30 },
+                          { m: 'Dez', stock: 48, vendas: 42 },
+                          { m: 'Jan', stock: 65, vendas: 38 },
+                          { m: 'Fev', stock: 58, vendas: 45 },
+                        ].map((d) => (
+                          <div key={d.m} className="flex-1 flex flex-col items-center gap-[2px]">
+                            <div className="w-full flex gap-[2px] items-end" style={{ height: 56 }}>
+                              <div className="flex-1 rounded-t-sm bg-orange/50 transition-all" style={{ height: `${d.stock}%` }} />
+                              <div className="flex-1 rounded-t-sm bg-success/40 transition-all" style={{ height: `${d.vendas}%` }} />
+                            </div>
+                            <span className="text-[7px] text-muted/60 leading-none">{d.m}</span>
                           </div>
                         ))}
                       </div>
