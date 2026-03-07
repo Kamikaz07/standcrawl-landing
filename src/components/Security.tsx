@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Lock, ShieldCheck, KeyRound, Smartphone, Key, DatabaseBackup } from 'lucide-react';
+import { Lock, ShieldCheck, KeyRound, ShieldAlert, Key, DatabaseBackup } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface SecurityItem {
@@ -12,7 +12,7 @@ const items: SecurityItem[] = [
   { icon: Lock, title: 'Encriptação AES-256', description: 'Dados encriptados at-rest e in-transit' },
   { icon: ShieldCheck, title: 'Zero Trust', description: 'Cloudflare Zero Trust para acesso seguro' },
   { icon: KeyRound, title: 'Vault para Segredos', description: 'HashiCorp Vault para gestão de chaves' },
-  { icon: Smartphone, title: 'PWA Instalável', description: 'Instale no telemóvel como app nativa' },
+  { icon: ShieldAlert, title: 'Rate Limiting & WAF', description: 'Proteção contra ataques brute-force e bots' },
   { icon: Key, title: 'JWT Authentication', description: 'Tokens seguros com refresh automático' },
   { icon: DatabaseBackup, title: 'Backups Automáticos', description: 'Backups diários com retenção e recuperação rápida' },
 ];

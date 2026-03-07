@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
@@ -13,8 +14,14 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import Empresa from './pages/Empresa';
+import Sobre from './pages/Sobre';
+import Legal from './pages/Legal';
+import Termos from './pages/Termos';
+import Privacidade from './pages/Privacidade';
+import Cookies from './pages/Cookies';
 
-export default function App() {
+function LandingPage() {
   return (
     <>
       <Navbar />
@@ -35,5 +42,19 @@ export default function App() {
       <Footer />
       <BackToTop />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/empresa" element={<Empresa />} />
+      <Route path="/sobre" element={<Sobre />} />
+      <Route path="/legal" element={<Legal />} />
+      <Route path="/termos" element={<Termos />} />
+      <Route path="/privacidade" element={<Privacidade />} />
+      <Route path="/cookies" element={<Cookies />} />
+    </Routes>
   );
 }

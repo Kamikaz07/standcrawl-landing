@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const footerLinks = {
   Produto: [
     { label: 'Funcionalidades', href: '#funcionalidades' },
@@ -5,14 +7,16 @@ const footerLinks = {
     { label: 'FAQ', href: '#faq' },
   ],
   Empresa: [
-    { label: 'Sobre nós', href: '#' },
+    { label: 'Sobre nós', href: '/sobre', isRoute: true },
+    { label: 'Empresa', href: '/empresa', isRoute: true },
   ],
   Legal: [
-    { label: 'Termos & Condições', href: '#' },
-    { label: 'Privacidade', href: '#' },
-    { label: 'Cookies', href: '#' },
+    { label: 'Legal', href: '/legal', isRoute: true },
+    { label: 'Termos & Condições', href: '/termos', isRoute: true },
+    { label: 'Privacidade', href: '/privacidade', isRoute: true },
+    { label: 'Cookies', href: '/cookies', isRoute: true },
   ],
-};
+} as const;
 
 export default function Footer() {
   return (
@@ -37,12 +41,21 @@ export default function Footer() {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted hover:text-orange transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {'isRoute' in link && link.isRoute ? (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-muted hover:text-orange transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-sm text-muted hover:text-orange transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

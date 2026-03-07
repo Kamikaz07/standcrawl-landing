@@ -133,7 +133,7 @@ export default function AcquisitionAgent() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.3, rootMargin: '0px 0px -100px 0px' },
     );
 
     observer.observe(el);

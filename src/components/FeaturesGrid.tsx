@@ -17,7 +17,7 @@ const features: Feature[] = [
   {
     icon: TrendingUp,
     title: 'Pricing Inteligente',
-    description: 'Recomendações de preço com Machine Learning (XGBoost) e análise profunda com Google Gemini. Ajuste automático por aging.',
+    description: 'Recomendações de preço com Machine Learning e análise profunda com LLM. Bom base nos dados de mercado e características do veículo.',
   },
   {
     icon: Search,
