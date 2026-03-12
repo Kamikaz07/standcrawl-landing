@@ -19,6 +19,7 @@ const plans: Plan[] = [
     priceNote: 'Ideal para começar',
     description: 'Para stands pequenos que querem organizar o negócio.',
     features: [
+      { text: 'Onboarding personalizado', included: true },
       { text: 'Gestão de stock de veículos', included: true },
       { text: 'Dashboard & Analytics', included: true },
       { text: 'CRM & Pipeline de vendas', included: true },
@@ -62,7 +63,6 @@ const plans: Plan[] = [
       { text: 'Gestão multi-stand (Dealers)', included: true },
       { text: 'Suporte prioritário dedicado', included: true },
       { text: 'Utilizadores ilimitados', included: true },
-      { text: 'Onboarding personalizado', included: true },
     ],
     cta: 'Fale Connosco',
     ctaStyle: 'outline',

@@ -18,7 +18,7 @@ const tabs: Tab[] = [
     label: 'Pricing IA',
     icon: TrendingUp,
     title: 'Pricing com IA',
-    description: 'XGBoost analisa 50k+ preços do mercado para posicionar o seu veículo no percentil ideal.',
+    description: 'LLM analisa 50k+ preços do mercado para posicionar o seu veículo no percentil ideal.',
     bullets: [
       'Recomendação ML com XGBoost',
       'Análise profunda com Gemini',
