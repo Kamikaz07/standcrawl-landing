@@ -42,7 +42,7 @@ export default function Termos() {
       </p>
       <ul>
         <li><strong>Gestão de Stock:</strong> controlo de inventário com rastreamento de aging, custos e margens.</li>
-        <li><strong>Scraping de Plataformas:</strong> recolha automatizada de anúncios do StandVirtual, OLX e PiscaPisca.</li>
+        <li><strong>Scraping de Plataformas:</strong> recolha automatizada de anúncios das principais plataformas de automóveis em Portugal.</li>
         <li><strong>Agente de Aquisições IA:</strong> sistema multi-agente autónomo para identificação e avaliação de oportunidades de compra.</li>
         <li><strong>Pricing Inteligente:</strong> recomendações de preço baseadas em modelos de machine learning treinados com dados do mercado português.</li>
         <li><strong>CRM & Leads:</strong> gestão completa do pipeline de vendas com scoring de leads por IA.</li>

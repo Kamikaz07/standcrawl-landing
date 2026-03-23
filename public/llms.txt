@@ -8,7 +8,7 @@ StandCrawl e um SaaS para stands automoveis (concessionarios de veiculos usados)
 ## Funcionalidades Principais
 - Gestao de Stock: inventario completo com tracking de aging e alertas automaticos
 - Pricing Inteligente: recomendacoes de preco com Machine Learning baseadas em dados de mercado
-- Market Explorer: scraping em tempo real de StandVirtual, OLX e PiscaPisca
+- Market Explorer: scraping em tempo real das principais plataformas de automoveis em Portugal
 - Agente de Aquisicoes: 4 agentes IA autonomos (Scout, Analyst, Valuator, Recommender) que encontram oportunidades 24/7
 - CRM & Leads: pipeline completo de vendas com scoring por IA
 - WhatsApp Integrado: comunicacao bidirecional com templates automaticos
@@ -33,7 +33,7 @@ StandCrawl e um SaaS para stands automoveis (concessionarios de veiculos usados)
 
 ## Diferenciadores
 - Construido de raiz para o mercado portugues (nao e uma traducao)
-- Integracao nativa com StandVirtual, OLX e PiscaPisca
+- Integracao nativa com as principais plataformas de automoveis portuguesas
 - 4 agentes IA autonomos que trabalham 24/7
 - Pricing com ML treinado em dados reais do mercado portugues
 - Seguranca de nivel empresarial (Vault, Zero Trust, AES-256)

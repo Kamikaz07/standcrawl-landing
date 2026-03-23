@@ -13,7 +13,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Que plataformas são suportadas?',
-    a: 'Agregamos dados de StandVirtual, OLX e PiscaPisca automaticamente.',
+    a: 'Agregamos dados das principais plataformas de automóveis em Portugal, automaticamente.',
   },
   {
     q: 'Como funciona o agente de aquisições?',

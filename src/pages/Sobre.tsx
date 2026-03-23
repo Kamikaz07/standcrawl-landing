@@ -34,7 +34,7 @@ export default function Sobre() {
         <h3>Feito para Portugal</h3>
         <p>
           Não somos uma tradução de um produto americano. O StandCrawl foi construído de raiz para o
-          mercado automóvel português — com integração nativa ao StandVirtual, OLX e PiscaPisca,
+          mercado automóvel português — com integração nativa às principais plataformas de,
           preços em euros, legislação portuguesa e comunicação em português.
         </p>
       </div>

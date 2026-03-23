@@ -60,7 +60,7 @@ const plans: Plan[] = [
     description: 'Para grupos com múltiplos stands e necessidades específicas.',
     features: [
       { text: 'Tudo do Professional', included: true },
-      { text: 'Gestão multi-stand (Dealers)', included: true },
+      { text: 'Gestão multi-stand', included: true },
       { text: 'Suporte prioritário dedicado', included: true },
       { text: 'Utilizadores ilimitados', included: true },
     ],

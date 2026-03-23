@@ -162,18 +162,17 @@ export default function DashboardPreview() {
                         <div className="rounded bg-orange px-2 py-1.5 text-[8px] text-white font-medium">Pesquisar</div>
                       </div>
                       <div className="flex gap-2 mb-2">
-                        {['StandVirtual', 'OLX', 'PiscaPisca'].map((p) => (
-                          <div key={p} className="rounded bg-navy-medium/40 px-2 py-0.5 text-[7px] text-muted border border-white/5">{p}</div>
+                        {[{ name: 'StandVirtual', c: '#00629B' }, { name: 'OLX', c: '#5EB630' }, { name: 'PiscaPisca', c: '#FFB800' }].map((p) => (
+                          <div key={p.name} className="flex items-center gap-1 rounded bg-navy-medium/40 px-2 py-0.5 border border-white/5"><span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: p.c }} /><span className="text-[7px] text-muted">{p.name}</span></div>
                         ))}
                       </div>
                       <div className="rounded-lg bg-navy-medium/20 border border-white/5 p-2">
                         <div className="h-1.5 rounded-full bg-navy-medium overflow-hidden mb-2"><div className="h-full w-3/4 rounded-full bg-success"/></div>
                         <div className="text-[7px] text-success mb-2">142 resultados encontrados</div>
-                        {[{ c: 'BMW 320d Touring', p: '€27.900', l: 'StandVirtual' }, { c: 'BMW 320d Sport', p: '€25.400', l: 'OLX' }].map((r) => (
+                        {[{ c: 'BMW 320d Touring', p: '€27.900', dot: '#00629B', l: 'SV' }, { c: 'BMW 320d Sport', p: '€25.400', dot: '#5EB630', l: 'OLX' }].map((r) => (
                           <div key={r.c} className="flex items-center justify-between py-1 border-t border-white/5 text-[8px]">
-                            <span className="text-off-white/80">{r.c}</span>
+                            <span className="flex items-center gap-1 text-off-white/80"><span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: r.dot }} />{r.c}</span>
                             <span className="text-off-white font-medium">{r.p}</span>
-                            <span className="text-muted text-[7px]">{r.l}</span>
                           </div>
                         ))}
                       </div>

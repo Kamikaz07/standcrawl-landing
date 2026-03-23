@@ -22,7 +22,7 @@ const features: Feature[] = [
   {
     icon: Search,
     title: 'Market Explorer',
-    description: 'Pesquise o mercado em tempo real. Scraping de StandVirtual, OLX e PiscaPisca com progresso ao vivo via WebSocket.',
+    description: 'Pesquise o mercado em tempo real. Agregação das principais plataformas automóveis com progresso ao vivo via WebSocket.',
   },
   {
     icon: Bot,

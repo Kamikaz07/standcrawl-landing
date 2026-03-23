@@ -23,12 +23,12 @@ const agents: Agent[] = [
     output: () => (
       <div className="space-y-1.5">
         {[
-          { src: 'StandVirtual', n: 12 },
-          { src: 'OLX', n: 8 },
-          { src: 'PiscaPisca', n: 5 },
+          { src: 'StandVirtual', color: '#00629B', n: 12 },
+          { src: 'OLX', color: '#5EB630', n: 8 },
+          { src: 'PiscaPisca', color: '#FFB800', n: 5 },
         ].map((s) => (
           <div key={s.src} className="flex items-center justify-between text-[11px]">
-            <span className="text-muted">{s.src}</span>
+            <span className="flex items-center gap-1.5 text-muted"><span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: s.color }} />{s.src}</span>
             <span className="text-off-white font-medium">{s.n} novos</span>
           </div>
         ))}
