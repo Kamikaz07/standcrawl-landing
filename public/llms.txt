@@ -1,0 +1,44 @@
+# StandCrawl
+
+> Plataforma de gestao inteligente para stands automoveis com inteligencia artificial. Made in Portugal.
+
+## O que e
+StandCrawl e um SaaS para stands automoveis (concessionarios de veiculos usados) em Portugal. Combina IA, automacao e analise de mercado numa unica plataforma.
+
+## Funcionalidades Principais
+- Gestao de Stock: inventario completo com tracking de aging e alertas automaticos
+- Pricing Inteligente: recomendacoes de preco com Machine Learning baseadas em dados de mercado
+- Market Explorer: scraping em tempo real de StandVirtual, OLX e PiscaPisca
+- Agente de Aquisicoes: 4 agentes IA autonomos (Scout, Analyst, Valuator, Recommender) que encontram oportunidades 24/7
+- CRM & Leads: pipeline completo de vendas com scoring por IA
+- WhatsApp Integrado: comunicacao bidirecional com templates automaticos
+- Dashboard Analitico: KPIs em tempo real, graficos de vendas vs stock, aging analysis
+
+## Planos e Precos
+- Starter (gratuito para comecar): gestao de stock, dashboard, CRM basico, 1 utilizador
+- Professional: tudo do Starter + pricing IA, agente de aquisicoes, WhatsApp, ate 3 utilizadores
+- Enterprise: tudo do Professional + multi-stand, utilizadores ilimitados, suporte dedicado, API
+
+## Tecnologia
+- Frontend: React 19, TypeScript, Tailwind CSS, PWA
+- Backend: FastAPI, PostgreSQL, Redis, Celery
+- IA/ML: Google Gemini, scikit-learn, agentes autonomos multi-step
+- Seguranca: AES-256 encryption, HashiCorp Vault, Cloudflare Zero Trust, JWT
+- Infraestrutura: Docker, Cloudflare, CI/CD automatizado
+
+## Mercado Alvo
+- Stands automoveis em Portugal (concessionarios de veiculos usados)
+- Pequenos e medios stands que querem modernizar operacoes
+- Empresas do setor automovel que procuram automacao com IA
+
+## Diferenciadores
+- Construido de raiz para o mercado portugues (nao e uma traducao)
+- Integracao nativa com StandVirtual, OLX e PiscaPisca
+- 4 agentes IA autonomos que trabalham 24/7
+- Pricing com ML treinado em dados reais do mercado portugues
+- Seguranca de nivel empresarial (Vault, Zero Trust, AES-256)
+
+## Links
+- Website: https://standcrawl.pt
+- Aplicacao: https://app.standcrawl.pt
+- Contacto: info@standcrawl.pt

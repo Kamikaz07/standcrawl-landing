@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Footer from './Footer';
+import SEOHead from './SEOHead';
+import { breadcrumbJsonLd } from '../seo';
 
 interface Props {
   title: string;
@@ -16,14 +18,20 @@ export default function PageLayout({ title, subtitle, children }: Props) {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const breadcrumb = breadcrumbJsonLd([
+    { name: 'StandCrawl', url: 'https://standcrawl.pt' },
+    { name: title, url: `https://standcrawl.pt${pathname}` },
+  ]);
+
   return (
     <>
+      <SEOHead jsonLd={breadcrumb} />
       {/* Minimal nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/80 glass border-b border-white/5">
+      <nav aria-label="Navegação secundária" className="fixed top-0 left-0 right-0 z-50 bg-navy/80 glass border-b border-white/5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
-              <img src="/favicon.svg" alt="StandCrawl" className="h-8 w-auto" />
+              <img src="/favicon.svg" alt="StandCrawl" className="h-8 w-auto" width={32} height={32} fetchPriority="high" />
               <span className="text-lg font-bold text-off-white">StandCrawl</span>
             </Link>
             <Link

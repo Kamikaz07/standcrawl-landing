@@ -28,6 +28,7 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 z-[60] h-[2px] bg-orange transition-all duration-100" style={{ width: `${progress * 100}%` }} />
 
       <motion.nav
+        aria-label="Navegação principal"
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -41,7 +42,7 @@ export default function Navbar() {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
-              <img src="/favicon.svg" alt="StandCrawl" className="h-8 w-auto" />
+              <img src="/favicon.svg" alt="StandCrawl" className="h-8 w-auto" width={32} height={32} fetchPriority="high" />
               <span className="text-lg font-bold text-off-white">StandCrawl</span>
             </a>
 

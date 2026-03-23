@@ -20,13 +20,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-navy-dark/80 py-12">
+    <footer role="contentinfo" className="border-t border-white/5 bg-navy-dark/80 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/logotipo.png" alt="StandCrawl" className="h-7 w-auto" />
+              <img src="/logotipo.png" alt="StandCrawl" className="h-7 w-auto" loading="lazy" width={28} height={28} />
               <span className="text-lg font-bold text-off-white">StandCrawl</span>
             </div>
             <p className="text-sm text-muted max-w-xs">

@@ -14,16 +14,23 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import SEOHead from './components/SEOHead';
 import Empresa from './pages/Empresa';
 import Sobre from './pages/Sobre';
 import Legal from './pages/Legal';
 import Termos from './pages/Termos';
 import Privacidade from './pages/Privacidade';
 import Cookies from './pages/Cookies';
+import {
+  organizationJsonLd,
+  websiteJsonLd,
+  softwareJsonLd,
+} from './seo';
 
 function LandingPage() {
   return (
     <>
+      <SEOHead jsonLd={[organizationJsonLd, websiteJsonLd, softwareJsonLd]} />
       <Navbar />
       <main>
         <Hero />

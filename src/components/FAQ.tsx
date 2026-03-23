@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
-const faqs = [
+const faqs: { q: string; a: string }[] = [
   {
     q: 'O que é o StandCrawl?',
     a: 'Uma plataforma de gestão para stands automóveis que combina IA, automação e análise de mercado para otimizar stock, preços e vendas.',
@@ -73,9 +73,26 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQ() {
   return (
     <section id="faq" className="py-24 sm:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
