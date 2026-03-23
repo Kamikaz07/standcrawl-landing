@@ -1,11 +1,27 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const { render } = await import('./dist-server/entry-server.js');
-const { seoConfig } = await import('./dist-server/entry-server.js');
+// Wrangler adds a hash to filenames (entry-server-XXXXX.js) and moves them
+// to assets/. Find the file dynamically to work both locally and on CF Pages.
+function findEntryServer() {
+  const direct = path.join(__dirname, 'dist-server', 'entry-server.js');
+  if (fs.existsSync(direct)) return direct;
+
+  const assetsDir = path.join(__dirname, 'dist-server', 'assets');
+  if (fs.existsSync(assetsDir)) {
+    const match = fs.readdirSync(assetsDir).find(
+      (f) => f.startsWith('entry-server') && f.endsWith('.js'),
+    );
+    if (match) return path.join(assetsDir, match);
+  }
+  throw new Error('Cannot find entry-server bundle in dist-server/');
+}
+
+const entryPath = pathToFileURL(findEntryServer()).href;
+const { render, seoConfig } = await import(entryPath);
 
 const template = fs.readFileSync(
   path.join(__dirname, 'dist', 'index.html'),
