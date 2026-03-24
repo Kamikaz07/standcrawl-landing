@@ -14,6 +14,7 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import Marquee from './components/Marquee';
 import SEOHead from './components/SEOHead';
 import Empresa from './pages/Empresa';
 import Sobre from './pages/Sobre';
@@ -34,6 +35,7 @@ function LandingPage() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <SocialProof />
         <FeaturesGrid />
         <FeatureShowcase />

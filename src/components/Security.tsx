@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Lock, ShieldCheck, KeyRound, ShieldAlert, Key, DatabaseBackup } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -28,16 +29,26 @@ const item = {
 };
 
 export default function Security() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const gridY = useTransform(scrollYProgress, [0, 1], [20, -20]);
+
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Grid pattern background */}
-      <div
+    <section ref={ref} className="py-24 sm:py-32 relative overflow-hidden">
+      {/* Grid pattern background with parallax */}
+      <motion.div
+        style={{ y: gridY }}
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-        }}
-      />
+        aria-hidden="true"
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        />
+      </motion.div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div

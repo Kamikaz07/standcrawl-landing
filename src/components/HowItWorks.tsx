@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Settings, Cpu, Rocket } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -31,9 +32,13 @@ const steps: Step[] = [
 ];
 
 export default function HowItWorks() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+
   return (
-    <section id="como-funciona" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-mesh pointer-events-none" />
+    <section ref={ref} id="como-funciona" className="py-24 sm:py-32 relative overflow-hidden">
+      <motion.div style={{ y: bgY }} className="absolute inset-0 bg-gradient-mesh pointer-events-none" />
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
