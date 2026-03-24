@@ -21,7 +21,7 @@ function findEntryServer() {
 }
 
 const entryPath = pathToFileURL(findEntryServer()).href;
-const { render, seoConfig } = await import(entryPath);
+const { render, seoConfig, sitemapMeta } = await import(entryPath);
 
 const template = fs.readFileSync(
   path.join(__dirname, 'dist', 'index.html'),
@@ -82,5 +82,27 @@ for (const route of routes) {
   fs.writeFileSync(path.join(dir, 'index.html'), page);
   console.log(`Pre-rendered: ${route}`);
 }
+
+// Generate sitemap.xml with <lastmod> set to build date
+const today = new Date().toISOString().split('T')[0];
+const BASE_URL = 'https://standcrawl.pt';
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes
+  .map((route) => {
+    const loc = route === '/' ? BASE_URL : `${BASE_URL}${route}`;
+    const meta = sitemapMeta[route] || { changefreq: 'monthly', priority: '0.5' };
+    return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${meta.changefreq}</changefreq>
+    <priority>${meta.priority}</priority>
+  </url>`;
+  })
+  .join('\n')}
+</urlset>
+`;
+fs.writeFileSync(path.join(__dirname, 'dist', 'sitemap.xml'), sitemapXml);
+console.log('Generated: sitemap.xml');
 
 console.log(`\nDone! Pre-rendered ${routes.length} routes.`);

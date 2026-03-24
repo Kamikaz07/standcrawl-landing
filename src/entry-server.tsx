@@ -3,7 +3,7 @@ import { StaticRouter } from 'react-router';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 
-export { seoConfig } from './seo';
+export { seoConfig, sitemapMeta } from './seo';
 
 export function render(url: string) {
   const html = renderToString(

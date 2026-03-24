@@ -158,7 +158,7 @@ export default function Privacidade() {
       <div className="info-card">
         <ul className="!mb-0">
           <li><strong>Entidade:</strong> Comissão Nacional de Proteção de Dados (CNPD)</li>
-          <li><strong>Website:</strong> <a href="https://www.cnpd.pt" target="_blank" rel="noopener noreferrer">www.cnpd.pt</a></li>
+          <li><strong>Website:</strong> <a href="https://www.cnpd.pt" target="_blank" rel="nofollow noopener noreferrer">www.cnpd.pt</a></li>
           <li><strong>Morada:</strong> Av. D. Carlos I, 134, 1200-651 Lisboa</li>
         </ul>
       </div>

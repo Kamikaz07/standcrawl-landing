@@ -80,7 +80,7 @@ export default function Legal() {
       <p>
         Em caso de litígio, o consumidor pode recorrer à plataforma europeia de resolução de
         litígios em linha (RLL), disponível em{' '}
-        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="nofollow noopener noreferrer">
           ec.europa.eu/consumers/odr
         </a>. Pode também recorrer às entidades de resolução alternativa de litígios de consumo (RAL)
         previstas na legislação portuguesa.

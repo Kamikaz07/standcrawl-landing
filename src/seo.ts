@@ -110,6 +110,16 @@ export const softwareJsonLd = {
   ],
 };
 
+export const sitemapMeta: Record<string, { changefreq: string; priority: string }> = {
+  '/': { changefreq: 'weekly', priority: '1.0' },
+  '/empresa': { changefreq: 'monthly', priority: '0.7' },
+  '/sobre': { changefreq: 'monthly', priority: '0.7' },
+  '/legal': { changefreq: 'yearly', priority: '0.3' },
+  '/termos': { changefreq: 'yearly', priority: '0.3' },
+  '/privacidade': { changefreq: 'yearly', priority: '0.3' },
+  '/cookies': { changefreq: 'yearly', priority: '0.3' },
+};
+
 export function breadcrumbJsonLd(
   items: { name: string; url: string }[],
 ) {
