@@ -82,8 +82,15 @@ export default function FeaturesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+              }}
               className={`group relative rounded-2xl border border-white/5 bg-navy-dark/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:border-orange/20 transition-all duration-300 overflow-hidden ${f.span ?? ''}`}
             >
+              {/* Cursor spotlight */}
+              <div className="spotlight-overlay" />
               {/* Accent gradient for wide cards */}
               {f.accent && (
                 <div className={`absolute inset-0 bg-gradient-to-br ${f.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />

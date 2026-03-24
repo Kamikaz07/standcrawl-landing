@@ -77,8 +77,14 @@ export default function Security() {
             <motion.div
               key={sec.title}
               variants={item}
-              className="flex items-start gap-4 rounded-xl border border-white/5 bg-navy-dark/30 p-5 hover:border-white/10 transition-colors"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+              }}
+              className="group relative flex items-start gap-4 rounded-xl border border-white/5 bg-navy-dark/30 p-5 hover:border-white/10 transition-colors"
             >
+              <div className="spotlight-overlay" />
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-orange/10 flex items-center justify-center text-orange">
                 <sec.icon size={20} />
               </div>

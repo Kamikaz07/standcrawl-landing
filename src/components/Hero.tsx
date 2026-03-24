@@ -102,14 +102,28 @@ export default function Hero() {
             >
               <a
                 href="#contacto"
-                className="group inline-flex items-center gap-2 rounded-xl bg-orange px-6 py-3 text-base font-semibold text-white shadow-glow hover:scale-[1.02] hover:shadow-[0_0_50px_rgba(247,127,0,0.3)] transition-all duration-200"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left - rect.width / 2;
+                  const y = e.clientY - rect.top - rect.height / 2;
+                  e.currentTarget.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+                }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
+                className="group inline-flex items-center gap-2 rounded-xl bg-orange px-6 py-3 text-base font-semibold text-white shadow-glow hover:shadow-[0_0_50px_rgba(247,127,0,0.3)] transition-transform duration-200 ease-out"
               >
                 Experimentar Grátis
                 <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#contacto"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3 text-base font-medium text-off-white hover:border-white/20 hover:bg-white/5 transition-all"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left - rect.width / 2;
+                  const y = e.clientY - rect.top - rect.height / 2;
+                  e.currentTarget.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3 text-base font-medium text-off-white hover:border-white/20 hover:bg-white/5 transition-transform duration-200 ease-out"
               >
                 <Mail size={18} />
                 Pedir Demo
